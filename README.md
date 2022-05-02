@@ -10,7 +10,8 @@
 
 - Predicting Radiation-Induced Heart Disease and Survival—Is Location the Key? By Carmen Bergom, MD, PhD; David Rayan, DO; Sherry-Ann Brown, MD, PhD [here](https://jamanetwork.com/journals/jamaoncology/article-abstract/2773835?casa_token=lwk00thpJqQAAAAA:GjG6mf7ybvYZBjutBlByHR3NrtNXOol7_yWGDvkdoNFd4g-Lrb6Sfgz3qsNJbxm1hpCV49tfR7s)
 - Gender-related differences in heart failure: beyond the “one-size-fits-all” paradigm by Annamaria De Bellis, Giulia De Angelis, Enrico Fabris, Antonio Cannatà, Marco Merlo & Gianfranco Sinagra [here](https://link.springer.com/article/10.1007/s10741-019-09824-y)
-- Still need a third example.
+- Cardiovascular Disease Prevention by Diet Modification by Edward Yu, Vasanti S. Malik, Frank B. Hu MD PhD. 
+[here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6100800/)
 
 **What data-driven questions do you hope to answer about this domain (share at least 3)?**
 
