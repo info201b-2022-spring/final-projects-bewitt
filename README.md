@@ -8,8 +8,8 @@
 
 **What other examples of data driven project have you found related to this domain (share at least 3)?**
 
-- [Predicting Radiation-Induced Heart Disease and Survival—Is Location the Key? By Carmen Bergom, MD, PhD; David Rayan, DO; Sherry-Ann Brown, MD, PhD] (https://jamanetwork.com/journals/jamaoncology/article-abstract/2773835?casa_token=lwk00thpJqQAAAAA:GjG6mf7ybvYZBjutBlByHR3NrtNXOol7_yWGDvkdoNFd4g-Lrb6Sfgz3qsNJbxm1hpCV49tfR7s)
-- [Gender-related differences in heart failure: beyond the “one-size-fits-all” paradigm by Annamaria De Bellis, Giulia De Angelis, Enrico Fabris, Antonio Cannatà, Marco Merlo & Gianfranco Sinagra] (https://link.springer.com/article/10.1007/s10741-019-09824-y)
+- Predicting Radiation-Induced Heart Disease and Survival—Is Location the Key? By Carmen Bergom, MD, PhD; David Rayan, DO; Sherry-Ann Brown, MD, PhD [here](https://jamanetwork.com/journals/jamaoncology/article-abstract/2773835?casa_token=lwk00thpJqQAAAAA:GjG6mf7ybvYZBjutBlByHR3NrtNXOol7_yWGDvkdoNFd4g-Lrb6Sfgz3qsNJbxm1hpCV49tfR7s)
+- Gender-related differences in heart failure: beyond the “one-size-fits-all” paradigm by Annamaria De Bellis, Giulia De Angelis, Enrico Fabris, Antonio Cannatà, Marco Merlo & Gianfranco Sinagra [here](https://link.springer.com/article/10.1007/s10741-019-09824-y)
 - Still need a third example.
 
 **What data-driven questions do you hope to answer about this domain (share at least 3)?**
