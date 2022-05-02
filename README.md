@@ -6,7 +6,7 @@ We are interested in this domain because one of our group mates, Jake, is a bio 
 
 What other examples of data driven project have you found related to this domain (share at least 3)?
 
-
+(1) Predicting Radiation-Induced Heart Disease and Survival—Is Location the Key? By Carmen Bergom, MD, PhD; David Rayan, DO; Sherry-Ann Brown, MD, PhD (2) Gender-related differences in heart failure: beyond the “one-size-fits-all” paradigm by Annamaria De Bellis, Giulia De Angelis, Enrico Fabris, Antonio Cannatà, Marco Merlo & Gianfranco Sinagra 
 
 What data-driven questions do you hope to answer about this domain (share at least 3)?
 
