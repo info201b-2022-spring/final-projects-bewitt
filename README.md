@@ -8,8 +8,8 @@
 
 **What other examples of data driven project have you found related to this domain (share at least 3)?**
 
-- Predicting Radiation-Induced Heart Disease and Survival—Is Location the Key? By Carmen Bergom, MD, PhD; David Rayan, DO; Sherry-Ann Brown, MD, PhD
-- Gender-related differences in heart failure: beyond the “one-size-fits-all” paradigm by Annamaria De Bellis, Giulia De Angelis, Enrico Fabris, Antonio Cannatà, Marco Merlo & Gianfranco Sinagra
+- [Predicting Radiation-Induced Heart Disease and Survival—Is Location the Key? By Carmen Bergom, MD, PhD; David Rayan, DO; Sherry-Ann Brown, MD, PhD] (https://jamanetwork.com/journals/jamaoncology/article-abstract/2773835?casa_token=lwk00thpJqQAAAAA:GjG6mf7ybvYZBjutBlByHR3NrtNXOol7_yWGDvkdoNFd4g-Lrb6Sfgz3qsNJbxm1hpCV49tfR7s)
+- [Gender-related differences in heart failure: beyond the “one-size-fits-all” paradigm by Annamaria De Bellis, Giulia De Angelis, Enrico Fabris, Antonio Cannatà, Marco Merlo & Gianfranco Sinagra] (https://link.springer.com/article/10.1007/s10741-019-09824-y)
 - Still need a third example.
 
 **What data-driven questions do you hope to answer about this domain (share at least 3)?**
@@ -19,14 +19,20 @@
 1. U.S. State Life Expectancy by Sex, 2018
 
 **Where did you download the data (e.g., a web URL)?**
+- This data set was downloaded [here](https://catalog.data.gov/dataset/u-s-state-life-expectancy-by-sex-2018)
 
 **How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?**
+- This data was collected by the National Center for Health Statistics who operated under the Center for Disease Control and Prevention. It compiles life expectancy at birth estimates for all states and seperates them based on sex (male and female), using the data available in 2018. 
 
 **How many observations (rows) are in your data?**
+- This dataset has 157 observations (rows).
 
 **How many features (columns) are in the data?**
+- This dataset has 5 features (columns).
 
 **What questions (from above) can be answered using the data in this dataset?**
+- What is the relationship between age and life expectancy?
+- Is there a correlation between life expectancy and sex?
 
 2. Personal Key Indicators of Heart Disease
 
