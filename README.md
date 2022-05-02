@@ -41,7 +41,8 @@
 - This data set was downloaded from: [This](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease)
 
 **How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?**
-- This data set was taken from the CDC and is an entirely American database.  It pulls from hospitals around the United States and originally had 300 columns of data.  The one we chose has been trimmed to only have 18 variable and aroound 400,000 pieces of data. 
+- This data set was taken from the CDC and is an entirely American database.  It pulls from hospitals around the United States and originally had 300 columns of data.  The one we chose has been trimmed to only have 18 variable and aroound 400,000 pieces of data.
+
 **How many observations (rows) are in your data?**
 - 319,796
 
