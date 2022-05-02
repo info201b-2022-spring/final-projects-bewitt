@@ -1,6 +1,7 @@
 # final-projects-bewitt
 
-**Heart Health**
+**Heart Health** 
+*Jake Flynn, Jackson Kamins, Belle Witt, & Daniel Kim*
 
 **Why are you interested in this field/domain?**
 
