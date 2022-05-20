@@ -72,7 +72,8 @@ lbls <- paste(lbls, sex_heart_disease$Sex)
 lbls <- paste(lbls, "Deaths of Heart Disease")
 pie(slices, labels = lbls, main = "Pie Chart of Sex and Risk of Heart Disease")
 ```
-Explanation Paragraph
+### Explanation Paragraph
+We have chosen to use this graphic because it emphasizes the disparity in heart disease related deaths between men and women.  As seen in the Pie Chart above, men are at a 21% higher risk of heart disease related death as compared to women.  The Pie Chart, while lacking the exact clarity of other charts, emphasizes the disparity.  The difference shown in the slices catches the eye.  
 
 # Chart 3
 
