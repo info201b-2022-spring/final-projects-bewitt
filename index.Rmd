@@ -8,8 +8,8 @@ date: '2022-05-20'
 # Summary
 
 # Table
-```{table}
-heart_data <- read.csv("/Users/jakeflynn/final-projects-bewitt/data/heart_2020_cleaned.csv")
+```{table, echo = FALSE}
+heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 # new data set for the heart health data that includes only columns of interest
 heart_data_set <- select(heart_data, HeartDisease, Smoking, AlcoholDrinking, Stroke, AgeCategory)
 # new data set that is grouped by age category
@@ -33,7 +33,7 @@ colnames(aggregate_table) <- c("Age Category", "Heart Disease Proportion", "Stro
 # load the data set and package
 library(dplyr)
 library(ggplot2)
-heart_data <- read.csv("/Users/jakeflynn/final-projects-bewitt/data/heart_2020_cleaned.csv")
+heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 # new data set that is grouped by age category
 grouped <- group_by(heart_data, AgeCategory)
 # Convert HeartDisease to values that can be summed
@@ -61,7 +61,7 @@ Explanation Paragraph
 ```{pie, echo = FALSE}
 library(tidyverse)
 library(dplyr)
-heart_df <- read.csv("/Users/jacksonkamins/Desktop/INFO 201/final-projects-bewitt/data/heart_2020_cleaned.csv")
+heart_df <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 heart_df$HeartDisease <- ifelse(heart_df$HeartDisease == "Yes", 1,0)
 heart_disease_by_sex <- group_by(heart_df, Sex)
 sex_heart_disease <- summarise(heart_disease_by_sex, total_disease = sum(HeartDisease))
@@ -77,26 +77,4 @@ Explanation Paragraph
 # Chart 3
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

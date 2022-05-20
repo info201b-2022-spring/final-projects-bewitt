@@ -376,23 +376,6 @@ pre code {
 </div>
 <div id="table" class="section level1">
 <h1>Table</h1>
-<pre class="table"><code>heart_data &lt;- read.csv(&quot;/Users/jakeflynn/final-projects-bewitt/data/heart_2020_cleaned.csv&quot;)
-# new data set for the heart health data that includes only columns of interest
-heart_data_set &lt;- select(heart_data, HeartDisease, Smoking, AlcoholDrinking, Stroke, AgeCategory)
-# new data set that is grouped by age category
-grouped &lt;- group_by(heart_data_set, AgeCategory)
-# Convert HeartDisease, Stroke, Smoking, and AlcoholDrinking columns to values that can be summed
-grouped$HeartDisease&lt;-ifelse(grouped$HeartDisease==&quot;Yes&quot;, 1, 0)
-grouped$Stroke&lt;-ifelse(grouped$Stroke==&quot;Yes&quot;, 1, 0)
-grouped$Smoking&lt;-ifelse(grouped$Smoking==&quot;Yes&quot;, 1, 0)
-grouped$AlcoholDrinking&lt;-ifelse(grouped$AlcoholDrinking==&quot;Yes&quot;, 1, 0)
-# Include proportion of people who have reported heart disease or a stroke for their age category
-aggregate_table &lt;- summarize(grouped, heart_disease_prop = format(sum(HeartDisease) / length(HeartDisease), digits = 2),
-                             stroke_prop = format(sum(Stroke) / length(Stroke), digits = 2),
-                             smoke_prop = format(sum(Smoking) / length(Smoking), digits = 2),
-                             alcohol_prop = format(sum(AlcoholDrinking) / length(AlcoholDrinking), digits = 2))
-# Create human readable column names
-colnames(aggregate_table) &lt;- c(&quot;Age Category&quot;, &quot;Heart Disease Proportion&quot;, &quot;Stroke Proportion&quot;, &quot;Smoking Proportion&quot;, &quot;Alcohol Drinking Proportion&quot;)</code></pre>
 </div>
 <div id="bar-chart-of-heart-disease-by-age-grouped" class="section level1">
 <h1>Bar Chart of Heart Disease by Age Grouped</h1>
