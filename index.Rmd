@@ -4,6 +4,8 @@ output: html_document
 date: '2022-05-20'
 ---
 # Introduction
+In this exploratory data analysis, we opted to focus on the data set titled "Personal Key Indicators of Heart Disease" to further 
+explore that factors that out people at risk for developing heart disease. This data was collected by the CDC and is an entirely American database. It pulls from hospitals around the United States and originally had 300 columns of data. The one we chose has been trimmed to only have 18 variable and around 400,000 pieces of data. For the past decade or more, according to the CDC, Heart Disease has been one of the leading causes of death in the United States. Our driving goal being this analysis is to see if there are certain factors that seem to put individuals at a higher risk for heart disease than others. Through this, we hope to explore the interactions among the various factors to see how it affects certain groups in comparison to others. 
 
 # Summary
 
