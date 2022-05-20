@@ -29,6 +29,8 @@ aggregate_table <- summarize(grouped, heart_disease_prop = format(sum(HeartDisea
 # Create human readable column names
 colnames(aggregate_table) <- c("Age Category", "Heart Disease Proportion", "Stroke Proportion", "Smoking Proportion", "Alcohol Drinking Proportion")
 ```
+### Table Explanation
+We decided to include an aggregate table that grouped by age category because age category is known to be an important factor that affects the risk that someone develops heart disease or atherosclerosis. Once grouped by age category, we decided to compute the proportion of people for each age category that have heart disease. These proportions allow us to compare the differences between age categories. Proportions were required to accurately compare the differences between age categories because each age category had a different number of participants. We also chose to compute proportions for stroke and whether the participant regularly consumes alcohol or smokes because these are known risk factors for developing heart disease. The table reveals that heart disease and stroke proportions increase as age category increases. The table also reveals that the presence of smoking approximately increases as age category increases, although this is not a perfect relationship. Lastly, the table reveals that alcohol consumption is highest among the 25-29 year age category, which is interesting because this group has the lowest proportion of participants that have heart disease.
 
 # Bar Chart of Heart Disease by Age Grouped
 ```{bar, echo = FALSE}
@@ -57,7 +59,8 @@ heart_disease_age_barplot +
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle("Proportion of Americans With\nHeart Disease by Age Category (2020)")
 ```
-Explanation Paragraph
+### Explanation Paragraph
+We included a bar chart because we displayed a categorical variable (Age Category) and a continuous variable (Proportion of Age Category With Heart Disease), which is exactly what bar charts are used for. Specifically, we wanted to show how the proportion of people who have heart disease increases with increasing age category. The bar chart shows that every increase in age category results in a subsequent increase in the proportion of people in that age category that report having heart disease. I was surprised that the youngest age category didn't have a higher proportion because I was taught in my biology classes that congenital heart disease is most prevalent in younger populations because these patients often do not make it to the higher age categories. 
 
 # Pie Chart of People With Heart Disease Based on Sex (M or F)
 ```{pie, echo = FALSE}
