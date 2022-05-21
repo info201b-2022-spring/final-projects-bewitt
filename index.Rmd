@@ -11,6 +11,7 @@ explore that factors that out people at risk for developing heart disease. This 
 ```{include=FALSE}
 source("summary.r")
 ```
+This data set contains the information of **319,795** individuals. Of these individuals, **27,373**, or **8.6%**, have heart disease. In order to further break down the specifics characteristics that those individuals with heart disease have, we looked at the sex. We found that **11,234** of the women in the data set had heart disease and **16139** of the men in the data set had heart disease, **41.04%** and **58.86%**, respectively. This was an interesting calculation as ratio in the data set of women to men is **1.15 to 1**. We also found that the average BMI of someone with Heart Disease is **29.4**, whereas it is **28.2** for people without Heart Disease.  
 
 # Table
 ```{}

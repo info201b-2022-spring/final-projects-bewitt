@@ -387,19 +387,65 @@ certain groups in comparison to others.</p>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
 <pre include="FALSE"><code>source(&quot;summary.r&quot;)</code></pre>
+<p>This data set contains the information of <strong>319,795</strong>
+individuals. Of these individuals, <strong>27,373</strong>, or
+<strong>8.6%</strong>, have heart disease. In order to further break
+down the specifics characteristics that those individuals with heart
+disease have, we looked at the sex. We found that
+<strong>11,234</strong> of the women in the data set had heart disease
+and <strong>16139</strong> of the men in the data set had heart disease,
+<strong>41.04%</strong> and <strong>58.86%</strong>, respectively. This
+was an interesting calculation as ratio in the data set of women to men
+is <strong>1.15 to 1</strong>. We also found that the average BMI of
+someone with Heart Disease is <strong>29.4</strong>, whereas it is
+<strong>28.2</strong> for people without Heart Disease.</p>
 </div>
 <div id="table" class="section level1">
 <h1>Table</h1>
 <pre><code>source(&quot;table.r&quot;)</code></pre>
+<div id="table-explanation" class="section level3">
+<h3>Table Explanation</h3>
+<p>We decided to include an aggregate table that grouped by age category
+because age category is known to be an important factor that affects the
+risk that someone develops heart disease or atherosclerosis. Once
+grouped by age category, we decided to compute the proportion of people
+for each age category that have heart disease. These proportions allow
+us to compare the differences between age categories. Proportions were
+required to accurately compare the differences between age categories
+because each age category had a different number of participants. We
+also chose to compute proportions for stroke and whether the participant
+regularly consumes alcohol or smokes because these are known risk
+factors for developing heart disease. The table reveals that heart
+disease and stroke proportions increase as age category increases. The
+table also reveals that the presence of smoking approximately increases
+as age category increases, although this is not a perfect relationship.
+Lastly, the table reveals that alcohol consumption is highest among the
+25-29 year age category, which is interesting because this group has the
+lowest proportion of participants that have heart disease.</p>
+</div>
 </div>
 <div id="bar-chart-of-heart-disease-by-age-grouped" class="section level1">
 <h1>Bar Chart of Heart Disease by Age Grouped</h1>
 <pre><code>source(&quot;chart1.R&quot;)</code></pre>
-<p>Explanation Paragraph</p>
+<div id="explanation-paragraph" class="section level3">
+<h3>Explanation Paragraph</h3>
+<p>We included a bar chart because we displayed a categorical variable
+(Age Category) and a continuous variable (Proportion of Age Category
+With Heart Disease), which is exactly what bar charts are used for.
+Specifically, we wanted to show how the proportion of people who have
+heart disease increases with increasing age category. The bar chart
+shows that every increase in age category results in a subsequent
+increase in the proportion of people in that age category that report
+having heart disease. I was surprised that the youngest age category
+didn’t have a higher proportion because I was taught in my biology
+classes that congenital heart disease is most prevalent in younger
+populations because these patients often do not make it to the higher
+age categories.</p>
+</div>
 </div>
 <div id="pie-chart-of-people-with-heart-disease-based-on-sex-m-or-f" class="section level1">
 <h1>Pie Chart of People With Heart Disease Based on Sex (M or F)</h1>
-<div id="explanation-paragraph" class="section level3">
+<div id="explanation-paragraph-1" class="section level3">
 <h3>Explanation Paragraph</h3>
 <p>We have chosen to use this graphic because it emphasizes the
 disparity in heart disease related deaths between men and women. As seen
