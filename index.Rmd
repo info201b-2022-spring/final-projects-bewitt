@@ -8,71 +8,24 @@ In this exploratory data analysis, we opted to focus on the data set titled "Per
 explore that factors that out people at risk for developing heart disease. This data was collected by the CDC and is an entirely American database. It pulls from hospitals around the United States and originally had 300 columns of data. The one we chose has been trimmed to only have 18 variable and around 400,000 pieces of data. For the past decade or more, according to the CDC, Heart Disease has been one of the leading causes of death in the United States. Our driving goal being this analysis is to see if there are certain factors that seem to put individuals at a higher risk for heart disease than others. Through this, we hope to explore the interactions among the various factors to see how it affects certain groups in comparison to others. 
 
 # Summary
+```{include=FALSE}
+source("summary.r")
+```
 
 # Table
-```{table, echo = FALSE}
-heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
-# new data set for the heart health data that includes only columns of interest
-heart_data_set <- select(heart_data, HeartDisease, Smoking, AlcoholDrinking, Stroke, AgeCategory)
-# new data set that is grouped by age category
-grouped <- group_by(heart_data_set, AgeCategory)
-# Convert HeartDisease, Stroke, Smoking, and AlcoholDrinking columns to values that can be summed
-grouped$HeartDisease <- ifelse(grouped$HeartDisease=="Yes", 1, 0)
-grouped$Stroke<-ifelse(grouped$Stroke=="Yes", 1, 0)
-grouped$Smoking<-ifelse(grouped$Smoking=="Yes", 1, 0)
-grouped$AlcoholDrinking<-ifelse(grouped$AlcoholDrinking=="Yes", 1, 0)
-# Include proportion of people who have reported heart disease or a stroke for their age category
-aggregate_table <- summarize(grouped, heart_disease_prop = format(sum(HeartDisease) / length(HeartDisease), digits = 2),
-                             stroke_prop = format(sum(Stroke) / length(Stroke), digits = 2),
-                             smoke_prop = format(sum(Smoking) / length(Smoking), digits = 2),
-                             alcohol_prop = format(sum(AlcoholDrinking) / length(AlcoholDrinking), digits = 2))
-# Create human readable column names
-colnames(aggregate_table) <- c("Age Category", "Heart Disease Proportion", "Stroke Proportion", "Smoking Proportion", "Alcohol Drinking Proportion")
+```{}
+source("table.r")
 ```
 
 # Bar Chart of Heart Disease by Age Grouped
-```{bar, echo = FALSE}
-# load the data set and package
-library(dplyr)
-library(ggplot2)
-heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
-# new data set that is grouped by age category
-grouped <- group_by(heart_data, AgeCategory)
-# Convert HeartDisease to values that can be summed
-grouped$HeartDisease<-ifelse(grouped$HeartDisease=="Yes", 1, 0)
-# Include proportion of people who have reported heart disease for their age category
-heart_disease_age <- summarize(grouped, heart_disease_prop = format(sum(HeartDisease) / length(HeartDisease), digits = 2))
-heart_disease_age_barplot <- heart_disease_age %>%
-  # First sort by `heart_disease_prop`. This sorts the data frame but NOT the factor levels.
-  arrange(heart_disease_prop) %>%
-  # This trick updates the factor levels.
-  mutate(AgeCategory=factor(AgeCategory, levels=AgeCategory)) %>%
-  ggplot(aes(x=AgeCategory, y=heart_disease_prop)) +
-  geom_bar(stat = "identity", fill="#f68060", alpha=.6, width=.4)
-# Call bar plot
-heart_disease_age_barplot +
-  coord_flip() +
-  xlab("Age Category (years)") +
-  ylab("Proportion of Age Category With Heart Disease") +
-  theme(axis.text.x = element_text(angle = 90)) +
-  ggtitle("Proportion of Americans With\nHeart Disease by Age Category (2020)")
+```{}
+source("chart1.R")
 ```
 Explanation Paragraph
 
 # Pie Chart of People With Heart Disease Based on Sex (M or F)
-```{pie, echo = FALSE}
-library(tidyverse)
-library(dplyr)
-heart_df <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
-heart_df$HeartDisease <- ifelse(heart_df$HeartDisease == "Yes", 1,0)
-heart_disease_by_sex <- group_by(heart_df, Sex)
-sex_heart_disease <- summarise(heart_disease_by_sex, total_disease = sum(HeartDisease))
-#Create Pie Chart
-slices <- c(sex_heart_disease$total_disease)
-lbls <- c(slices)
-lbls <- paste(lbls, sex_heart_disease$Sex)
-lbls <- paste(lbls, "Deaths of Heart Disease")
-pie(slices, labels = lbls, main = "Pie Chart of Sex and Risk of Heart Disease")
+```{pie chart, include=FALSE}
+plot("jacksontable.r")
 ```
 ### Explanation Paragraph
 We have chosen to use this graphic because it emphasizes the disparity in heart disease related deaths between men and women.  As seen in the Pie Chart above, men are at a 21% higher risk of heart disease related death as compared to women.  The Pie Chart, while lacking the exact clarity of other charts, emphasizes the disparity.  The difference shown in the slices catches the eye.  

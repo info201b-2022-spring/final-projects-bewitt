@@ -6,7 +6,7 @@
 #Loading Data
 library(tidyverse)
 library(dplyr)
-heart_df <- read.csv("/Users/jacksonkamins/Desktop/INFO 201/final-projects-bewitt/data/heart_2020_cleaned.csv")
+heart_df <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 
 heart_df$HeartDisease <- ifelse(heart_df$HeartDisease == "Yes", 1,0)
 

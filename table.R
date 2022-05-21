@@ -6,7 +6,7 @@
 # load the data set and package
 library(tidyverse)
 library(dplyr)
-heart_data <- read.csv("/Users/jakeflynn/final-projects-bewitt/data/heart_2020_cleaned.csv")
+heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 
 # new data set for the heart health data that includes only columns of interest
 heart_data_set <- select(heart_data, HeartDisease, Smoking, AlcoholDrinking, Stroke, AgeCategory)
