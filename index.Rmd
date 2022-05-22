@@ -8,33 +8,44 @@ In this exploratory data analysis, we opted to focus on the data set titled "Per
 explore that factors that out people at risk for developing heart disease. This data was collected by the CDC and is an entirely American database. It pulls from hospitals around the United States and originally had 300 columns of data. The one we chose has been trimmed to only have 18 variable and around 400,000 pieces of data. For the past decade or more, according to the CDC, Heart Disease has been one of the leading causes of death in the United States. Our driving goal being this analysis is to see if there are certain factors that seem to put individuals at a higher risk for heart disease than others. Through this, we hope to explore the interactions among the various factors to see how it affects certain groups in comparison to others. 
 
 # Summary
-```{include=FALSE}
+```{r echo = F}
 source("summary.r")
 ```
 This data set contains the information of **319,795** individuals. Of these individuals, **27,373**, or **8.6%**, have heart disease. In order to further break down the specifics characteristics that those individuals with heart disease have, we looked at the sex. We found that **11,234** of the women in the data set had heart disease and **16139** of the men in the data set had heart disease, **41.04%** and **58.86%**, respectively. This was an interesting calculation as ratio in the data set of women to men is **1.15 to 1**. We also found that the average BMI of someone with Heart Disease is **29.4**, whereas it is **28.2** for people without Heart Disease.  
 
 # Table
-```{}
+```{r echo = F}
 source("table.r")
+aggregate_table
 ```
 ### Table Explanation
 We decided to include an aggregate table that grouped by age category because age category is known to be an important factor that affects the risk that someone develops heart disease or atherosclerosis. Once grouped by age category, we decided to compute the proportion of people for each age category that have heart disease. These proportions allow us to compare the differences between age categories. Proportions were required to accurately compare the differences between age categories because each age category had a different number of participants. We also chose to compute proportions for stroke and whether the participant regularly consumes alcohol or smokes because these are known risk factors for developing heart disease. The table reveals that heart disease and stroke proportions increase as age category increases. The table also reveals that the presence of smoking approximately increases as age category increases, although this is not a perfect relationship. Lastly, the table reveals that alcohol consumption is highest among the 25-29 year age category, which is interesting because this group has the lowest proportion of participants that have heart disease.
 
 # Bar Chart of Heart Disease by Age Grouped
-```{}
+```{r echo = F}
 source("chart1.R")
+heart_disease_age_barplot +
+  coord_flip() +
+  xlab("Age Category (years)") +
+  ylab("Proportion of Age Category With Heart Disease") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle("Proportion of Americans With\nHeart Disease by Age Category (2020)")
 ```
 ### Explanation Paragraph
 We included a bar chart because we displayed a categorical variable (Age Category) and a continuous variable (Proportion of Age Category With Heart Disease), which is exactly what bar charts are used for. Specifically, we wanted to show how the proportion of people who have heart disease increases with increasing age category. The bar chart shows that every increase in age category results in a subsequent increase in the proportion of people in that age category that report having heart disease. I was surprised that the youngest age category didn't have a higher proportion because I was taught in my biology classes that congenital heart disease is most prevalent in younger populations because these patients often do not make it to the higher age categories. 
 
 # Pie Chart of People With Heart Disease Based on Sex (M or F)
-```{pie chart, include=FALSE}
-plot("jacksontable.r")
+```{r echo = F}
+source("jacksontable.r")
+pie_chart
 ```
 ### Explanation Paragraph
 We have chosen to use this graphic because it emphasizes the disparity in heart disease related deaths between men and women.  As seen in the Pie Chart above, men are at a 21% higher risk of heart disease related death as compared to women.  The Pie Chart, while lacking the exact clarity of other charts, emphasizes the disparity.  The difference shown in the slices catches the eye.  
 
-# Chart 3
-
-
-
+# Scatter Plot Matrix of Heart Disease Risk Factor Correlations
+```{r echo = F}
+source("chart3.R")
+scatter_matrix
+```
+### Explanation Paragraph
+We included a scatter plot matrix in order to compare the relationship between each set of our continuous variables: Heart Disease Proportion, Stroke Proportion, Smoking Proportion, and Alcohol Drinking Proportion in our set of data grouped by age category. This allows us to observe the relationship between risk factors for heart disease and the likelihood of developing heart disease, as well to observe the relationship between risk factors for heart disease. The scatter plots show that as the proportion for stroke and smoking increases, the proportion for developing heart disease increases as well within an age category. However, we found the opposite effect for the effect of alcohol drinking proportion on the heart disease proportion variable and the other risk factor variables. It is interesting to see that Alcohol Drinking Proportion is negatively correlated with Heart Disease Proportion, but this is likely because the age category that drank the most amount of alcohol is the youngest age category, which is the group with the highest risk of heart disease. Thus, this negative correlation does not mean that drinking more alcohol will decrease your risk of heart disease.

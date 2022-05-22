@@ -20,5 +20,5 @@ slices <- c(sex_heart_disease$total_disease)
 lbls <- c(slices)
 lbls <- paste(lbls, sex_heart_disease$Sex)
 lbls <- paste(lbls, "Deaths of Heart Disease")
-pie(slices, labels = lbls, main = "Pie Chart of Sex and Risk of Heart Disease")
+pie_chart <- pie(slices, labels = lbls, main = "Pie Chart of Sex and Risk of Heart Disease")
 

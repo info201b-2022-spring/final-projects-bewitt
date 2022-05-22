@@ -1,7 +1,7 @@
 # Aggregate table script
 # Jake Flynn
-# 05/20/22
-# Group members: Jake Flynn, Jackson Kamins, Belle Witt, Daniel Kim
+# 05/22/22
+# Group members: Jake Flynn, Jackson Kamins, Belle Witt
 
 # load the data set and package
 library(tidyverse)
@@ -20,7 +20,7 @@ grouped$Stroke<-ifelse(grouped$Stroke=="Yes", 1, 0)
 grouped$Smoking<-ifelse(grouped$Smoking=="Yes", 1, 0)
 grouped$AlcoholDrinking<-ifelse(grouped$AlcoholDrinking=="Yes", 1, 0)
 
-# Include proportion of people who have reported heart disease or a stroke for their age category
+# Include proportion of people who have reported heart disease, smoking. alcohol drinking, or a stroke for their age category
 aggregate_table <- summarize(grouped, heart_disease_prop = format(sum(HeartDisease) / length(HeartDisease), digits = 2),
                              stroke_prop = format(sum(Stroke) / length(Stroke), digits = 2),
                              smoke_prop = format(sum(Smoking) / length(Smoking), digits = 2),

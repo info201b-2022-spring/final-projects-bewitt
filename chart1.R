@@ -1,12 +1,12 @@
 # Chart 1 (Barplot): Proportion of Americans With Heart Disease by Age Category (2020)
 # Jake Flynn
-# 05/20/22
-# Group members: Jake Flynn, Jackson Kamins, Belle Witt, Daniel Kim
+# 05/22/22
+# Group members: Jake Flynn, Jackson Kamins, Belle Witt
 
 # load the data set and package
 library(dplyr)
 library(ggplot2)
-heart_data <- read.csv("/Users/jakeflynn/final-projects-bewitt/data/heart_2020_cleaned.csv")
+heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 
 # new data set that is grouped by age category
 grouped <- group_by(heart_data, AgeCategory)
