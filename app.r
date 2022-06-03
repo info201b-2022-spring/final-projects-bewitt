@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(plotly)
 
-#load in data
+# Load in data
 heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 categorical_data <- select(heart_data, HeartDisease, Smoking, AlcoholDrinking, Stroke, DiffWalking, Sex, AgeCategory, Race, Diabetic, PhysicalActivity, GenHealth, Asthma, KidneyDisease, SkinCancer)
 summary_page <- tabPanel(
@@ -30,7 +30,7 @@ cat_analysis_page <- tabPanel(
 )
 
 ui <- navbarPage(
-  # put stuff here
+  # Put stuff here
   title = "Heart Health",
   summary_page,
   cat_analysis_page
