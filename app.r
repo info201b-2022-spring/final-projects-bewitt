@@ -7,6 +7,13 @@ library(plotly)
 heart_data <- read.csv(url("https://raw.githubusercontent.com/info201b-2022-spring/final-projects-bewitt/main/data/heart_2020_cleaned.csv"))
 heart_data$HeartDisease<-ifelse(heart_data$HeartDisease=="Yes", 1, 0)
 categorical_data <- select(heart_data, Smoking, AlcoholDrinking, Stroke, DiffWalking, Sex, AgeCategory, Race, Diabetic, PhysicalActivity, GenHealth, Asthma, KidneyDisease, SkinCancer)
+
+intro_page <- tabPanel(
+  "Introduction",
+  titlePanel("Heart Health Data 2020"),
+  p("This website lets you explore Heart Health...")
+)
+
 summary_page <- tabPanel(
   "Summary",
   titlePanel("Heart Health Data 2020"),
@@ -51,9 +58,10 @@ cat_analysis_page <- tabPanel(
 ui <- navbarPage(
   # Put stuff here
   title = "Heart Health",
-  summary_page,
+  intro_page,
   cat_analysis_page,
-  rf_analysis_page
+  rf_analysis_page,
+  summary_page
 )
 
 # Define server logic
