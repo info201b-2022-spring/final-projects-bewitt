@@ -1,4 +1,3 @@
-library(shiny)
 library(dplyr)
 library(ggplot2)
 library(plotly)
@@ -10,7 +9,18 @@ categorical_data <- select(heart_data, Smoking, AlcoholDrinking, Stroke, DiffWal
 
 intro_page <- tabPanel(
   "Introduction",
-  titlePanel("Heart Health Data 2020"),
+  titlePanel(strong("Heart Health in Adults in the United States")),
+  p(em("Project Presented by Jake Flynn, Belle Witt & Jackson Kamins")),
+  img("heart image one", src = "~/image1.jpeg"),
+  h2("Purpose of the Project"),
+  p("For almost a century now, Heart Disease has been the leading cause of death in the United States. Living in a post
+    pandemic world, all too many people have been faced with the unfortunate relaity of losing a loved one. While there are still
+    many mysteries associated with heart disease and prevention measures, we hoped to take on this porject to learn more about the
+    factors that may influence the prevalence of Heart Disease amongst the adult population of the United States. We aimed to use this
+    project to help people better understand the factors that may put themseleves or their loved ones at risk for this disease. Two of the
+    factors we were orginally most interested in seeing the effects of were sex and age, as well as the intersection of the two. Overall,
+    we hope our analysis will give everyone a better understanding the risk fatcors associated with this disease."),
+  h2("About the Dataset"),
   p("This website lets you explore Heart Health...")
 )
 
