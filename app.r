@@ -48,6 +48,24 @@ cont_analysis_page <- tabPanel(
         inputId = "continuous",
         label = "Select a variable",
         choices = colnames(continuous_data)
+      ),
+      checkboxGroupInput(
+        inputId = "sex",
+        label = "Select a Sex",
+        choices = unique(heart_data$Sex),
+        selected = unique(heart_data$Sex)
+      ),
+      checkboxGroupInput(
+        inputId = "race",
+        label = "Select a Race",
+        choices = unique(heart_data$Race),
+        selected = unique(heart_data$Race)
+      ),
+      checkboxGroupInput(
+        inputId = "age",
+        label = "Select an Age Category",
+        choices = unique(heart_data$AgeCategory),
+        selected = unique(heart_data$AgeCategory)
       )
     ),
     mainPanel(
@@ -209,13 +227,19 @@ server <- function(input, output) {
   })
   
   output$hist <- renderPlot({
-    ggplot(heart_data_og, aes(x = .data[[input$continuous]], color = HeartDisease, fill = HeartDisease)) +
+    filtered_cat <- filter(heart_data_og, Sex %in% input$sex)
+    filtered_cat <- filter(filtered_cat, AgeCategory %in% input$age)
+    filtered_cat <- filter(filtered_cat, Race %in% input$race)
+    ggplot(filtered_cat, aes(x = .data[[input$continuous]], color = HeartDisease, fill = HeartDisease)) +
       geom_histogram(bins = 40, position = "identity") +
       labs(title = paste("Participant", input$continuous, "Distribution Grouped by Heart Disease"))
   })
   
  compute_means <- function(inp) {
-    grouped <- group_by(heart_data, HeartDisease)
+    filtered_cat <- filter(heart_data, Sex %in% input$sex)
+    filtered_cat <- filter(filtered_cat, AgeCategory %in% input$age)
+    filtered_cat <- filter(filtered_cat, Race %in% input$race)
+    grouped <- group_by(filtered_cat, HeartDisease)
     grouped <- mutate(grouped, means = mean(.data[[inp]]))
     grouped_unique <- unique(select(grouped, means))
   }
