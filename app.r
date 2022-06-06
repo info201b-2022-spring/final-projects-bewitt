@@ -77,6 +77,27 @@ rf_analysis_page <- tabPanel(
         inputId = "variable",
         label = "Select a variable",
         choices = colnames(categorical_data)
+      ),
+      sliderInput(
+        inputId = "slider_bmi",
+        label = "Select BMI Range",
+        min = min(heart_data$BMI),
+        max = max(heart_data$BMI),
+        value = max(heart_data$BMI)
+      ),
+      sliderInput(
+        inputId = "slider_physical",
+        label = "Select Physical Health Range",
+        min = min(heart_data$PhysicalHealth),
+        max = max(heart_data$PhysicalHealth),
+        value = min(heart_data$PhysicalHealth)
+      ),
+      sliderInput(
+        inputId = "slider_mental",
+        label = "Select Mental Health Range",
+        min = min(heart_data$MentalHealth),
+        max = max(heart_data$MentalHealth),
+        value = min(heart_data$MentalHealth)
       )
     ),
     mainPanel(
@@ -103,6 +124,27 @@ cat_analysis_page <- tabPanel(
         inputId = "var",
         label = "Select a variable",
         choices = colnames(categorical_data)
+      ),
+      sliderInput(
+        inputId = "slider_bmi2",
+        label = "Select BMI Range",
+        min = min(heart_data$BMI),
+        max = max(heart_data$BMI),
+        value = max(heart_data$BMI)
+      ),
+      sliderInput(
+        inputId = "slider_physical2",
+        label = "Select Physical Health Range",
+        min = min(heart_data$PhysicalHealth),
+        max = max(heart_data$PhysicalHealth),
+        value = min(heart_data$PhysicalHealth)
+      ),
+      sliderInput(
+        inputId = "slider_mental2",
+        label = "Select Mental Health Range",
+        min = min(heart_data$MentalHealth),
+        max = max(heart_data$MentalHealth),
+        value = min(heart_data$MentalHealth)
       )
     ),
     mainPanel(
@@ -130,7 +172,10 @@ ui <- navbarPage(
 server <- function(input, output) {
   
   make_bar_df <- function(var_name) {
-    bar_df <- select(categorical_data, var_name)
+    filtered <- filter(heart_data, BMI <= input$slider_bmi2)
+    filtered <- filter(filtered, PhysicalHealth >= input$slider_physical2)
+    filtered <- filter(filtered, MentalHealth >= input$slider_mental2)
+    bar_df <- select(filtered, var_name)
   }
   
   output$bar <- renderPlot({
@@ -144,7 +189,10 @@ server <- function(input, output) {
   })
 
   make_grouped_df <- function(var_name) {
-    grouped_df <- group_by(heart_data, .data[[var_name]])
+    filtered <- filter(heart_data, BMI <= input$slider_bmi)
+    filtered <- filter(filtered, PhysicalHealth >= input$slider_physical)
+    filtered <- filter(filtered, MentalHealth >= input$slider_mental)
+    grouped_df <- group_by(filtered, .data[[var_name]])
     grouped_df <- summarize(grouped_df, heart_disease_prop = format(sum(.data$HeartDisease) / length(.data$HeartDisease), digits = 2))
   }
   
